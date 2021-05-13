@@ -78,3 +78,8 @@ cython_debug/
 */.ipynb_checkpoints/*
 profile_default/
 ipython_config.py
+.idea/.gitignore
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+".idea/\321\200\320\260\321\201\321\207\320\265\321\202\320\272\320\260 2.iml"

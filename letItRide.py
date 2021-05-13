@@ -96,18 +96,19 @@ class LetItRideGame:
         cardTypeCounter = {}
         for type in CardType:
             cardTypeCounter[type] = 0
-        cardTypeCounterValues = cardTypeCounter.values()
-        cardValues = sorted([card.type.value for card in cards])
-        isRow = True
-        for i in range(len(cardValues) - 2):
-            if cardValues[i + 1] - cardValues[i] != 1:
-                isRow = False
-                break
-
+        cardValues = []
         for card in cards:
             cardSuitSet.add(card.suit)
             cardTypeSet.add(card.type)
             cardTypeCounter[card.type] += 1
+            cardValues.append(card.type.value)
+        cardTypeCounterValues = cardTypeCounter.values()
+        isRow = True
+        cardValues.sort()
+        for i in range(len(cardValues) - 2):
+            if cardValues[i + 1] - cardValues[i] != 1:
+                isRow = False
+                break
 
         # Royal Flush
         if isRow and len(cardSuitSet) == 1 and CardType.ACE in cardTypeSet:
